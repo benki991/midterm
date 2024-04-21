@@ -17,18 +17,41 @@ def profile(req, id):
     wait = False
     match id:
         case '1':
-            context = {
-                "data": {
-                    "id":id,
-                    "name": "Jemwel",
-                    "age": 21,
-                    "hobbies": "Basketball",
-                },
-            }
+            name = "Jemwel"
+            age = 21
+            email = "jemwel@gmail.com"
+            hobbies = {"Basketball", "Linux"}
+            wait = True
+        case '2':
+            name = "Joswa"
+            age = 100
+            email = "shab-dealer@pdea.com"
+            hobbies = {"Shab-"}
+            wait = True
+        case '3':
+            name = "Stephen"
+            age = 69
+            email = "spidermansavecity@gmail.com"
+            hobbies = {"Spider"}
+            wait = True
+        case '4':
+            name = "Kevin"
+            age = 21
+            email = "kevinbarret.payos@gmail.com"
+            hobbies = {"Sleep"}
             wait = True
         case _:
             wait = False
-            
+
+    context = {
+        "data": {
+            "id":id,
+            "name": name,
+            "age": age,
+            "email": email,
+            "hobbies": hobbies,
+        },
+    }     
     if wait == True:
         return HttpResponse(render(req, "profile.html", context))
     else:
