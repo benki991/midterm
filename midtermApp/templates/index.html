@@ -17,9 +17,10 @@
         data-modal-toggle="{{ i }}"
         class="my-6 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
+        {% load static %}
         <img
-          class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-          src="/docs/images/blog/image-4.jpg"
+          class="object-cover rounded-t-lg w-36 h-36 md:w-48 md:rounded-none md:rounded-s-lg"
+          src="{% static i.name.lower|add:'.png'%}"
           alt=""
         />
         <div class="flex flex-col justify-between p-4 leading-normal">
