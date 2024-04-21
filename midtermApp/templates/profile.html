@@ -4,13 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>{{ data.name }}</h1>
-    <h1>{{ data.age }}</h1>
-    <h1>{{ data.email }}</h1>
-    {% for x in data.hobbies %}
-    <h1>{{ x }}</h1>
-    {% endfor %}
+    <a href="/">
+      <button
+        type="button"
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+      >
+        Back
+      </button>
+    </a>
+    <div class="flex items-center flex-col">
+      {% load static %}
+      <img
+        class="rounded w-36 h-36"
+        src="{% static data.name.lower|add:'.png' %}"
+        alt="Extra large avatar"
+      />
+      <h1>{{ data.name }}</h1>
+      <h1>{{ data.age }}</h1>
+      <h1>{{ data.email }}</h1>
+      {% for x in data.hobbies %}
+      <h1>{{ x }}</h1>
+      {% endfor %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   </body>
 </html>
